@@ -1,4 +1,18 @@
 <form [formGroup]="form">
-    <label for="name">Name</label>
-    <input type="text" id="name" formControlName="'name">
+    <label for="ncategory">Category:</label>
+    <input type="text" id="category" formControlName="category"><br>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" formControlName="description"><br>
+
+    <label for="subcategory">Subcategory:</label>
+    <input type="text" id="subcategory" formControlName="subcategory"><br>
+
+    <label for="state">State:</label>
+    <input type="text" id="state" formControlName="state"><br>
+
+    <label for="in_charge">In Charge:</label>
+    <input type="text" id="in_charge" formControlName="in_charge"><br>
+    
 </form>
+{{form.value | json }}
