@@ -9,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CategoryComponent {
   form:FormGroup;
-  constructor(private readonly formBuilder: FormBuilder) {
+  /*constructor(private readonly formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       category:[null,[Validators.required,Validators.minLength(15)]],
       description:[null,[Validators.required,Validators.minLength(10),Validators.maxLength(200)]],
@@ -22,5 +22,21 @@ export class CategoryComponent {
     this.form.controls['description'].enable();
     console.log(this.form.controls['state'].enabled);
     console.log(this.form.controls['description'].enabled);
+  }*/
+  constructor(private formBuilder: FormBuilder){
+    this.form = formBuilder.group({
+      username: [null, [Validators.required]],
+      email: [null, [Validators.email]],
+      password: [null, [Validators.required]],
+      passwordConfirm: [null, [Validators.required]],
+
+    });
   }
+  save(){
+    if(this.form.valid){
+      alert('formulario valido');
+    } else {
+      alert('formulario no valido');
+    }
+  } 
 }
